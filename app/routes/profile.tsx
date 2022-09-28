@@ -1,20 +1,11 @@
-export default function Index() {
+import { Outlet } from '@remix-run/react'
+
+export default function ProfileRoute() {
   return (
-    <div style={{ fontFamily: 'system-ui, sans-serif', lineHeight: '1.4' }}>
-      <h1>Profile Route</h1>
-      <p>This route is protected</p>
-      <div>
-        <a href="/identity">Show auth profile</a>
-      </div>
-      <div>
-        <a href="/purge">Remove auth profile</a>
-      </div>
-      <div>
-        <a href="/logout">Logout</a>
-      </div>
-      <p>
-        <a href="/">Index Route</a>
-      </p>
+    <div>
+      <h1>User Profile Route</h1>
+      <p>This page provides details about the logged in user.</p>
+      <Outlet />
     </div>
   )
 }
