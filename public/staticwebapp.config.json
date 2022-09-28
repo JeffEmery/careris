@@ -49,6 +49,10 @@
       "allowedRoles": ["authenticated"]
     },
     {
+      "route": "/index",
+      "rewrite": "/api/request-handler"
+    },
+    {
       "route": "/*",
       "rewrite": "/api/request-handler"
     }

@@ -1,18 +1,21 @@
 {
-  "name": "remix-client-azure",
+  "name": "careris-client",
   "version": "0.0.1-alpha.0",
-  "description": "A Remix client on Azure Static Web Apps",
+  "description": "CareRIS Client App",
   "author": "Jeff Emery",
   "private": true,
   "sideEffects": false,
   "scripts": {
+    "build:app": "npm run build:css && remix build",
+    "build:css": "postcss styles --base styles --dir app/styles --env production",
+    "build:tw": "tailwindcss -m -i ./styles/app.css -o app/styles/app.css",
+    "dev": "concurrently \"npm run dev:css\" \"remix dev\"",
+    "dev:css": "postcss styles --base styles --dir app/styles -w",
+    "dev:tw": "tailwindcss -w -i ./styles/app.css -o app/styles/app.css",
     "build": "swa build",
-    "echo": "set HELLO=\"World\"&& echo $HELLO",
-    "build:app": "remix build",
-    "dev": "remix dev",
     "start": "swa start",
     "deploy": "swa deploy",
-    "deploy:prod": "swa deploy --env Production"
+    "deploy:prod": "swa deploy --env production"
   },
   "dependencies": {
     "@remix-run/node": "^1.7.0",
@@ -26,10 +29,16 @@
     "@remix-run/eslint-config": "^1.7.0",
     "@types/react": "^18.0.19",
     "@types/react-dom": "^18.0.6",
+    "autoprefixer": "^10.4.12",
+    "concurrently": "^7.4.0",
+    "cssnano": "^5.1.13",
     "eslint": "^8.23.0",
+    "postcss": "^8.4.16",
+    "postcss-cli": "^10.0.0",
+    "tailwindcss": "^3.1.8",
     "typescript": "^4.8.3"
   },
   "engines": {
-    "node": ">=14"
+    "node": ">=16"
   }
 }

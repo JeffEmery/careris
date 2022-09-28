@@ -1,8 +1,8 @@
 {
   "$schema": "https://aka.ms/azure/static-web-apps-cli/schema",
   "configurations": {
-    "remix-client-azure": {
-      "appName": "remix-client",
+    "careris-client": {
+      "appName": "careris",
       "appLocation": ".",
       "appBuildCommand": "npm run build:app",
       "appDevserverUrl": "http://localhost:3000",
