@@ -20,6 +20,31 @@ Using
 [PostCSS to optimizing CSS](https://tailwindcss.com/docs/optimizing-for-production)
 with [cssnano](https://cssnano.co/) for production
 
+### Build and run the App and CSS with Azure emulation
+
+`swa start`
+
+This will run the development build of the CSS in watch mode and the app in dev
+mode running through the Azure emulator. This is the closest to a hosted
+environment.
+
+### Build the App and CSS
+
+`swa build`
+
+This builds the app and CSS in production mode.
+
+### Deploy the app to Azure
+
+`swa deploy`
+
+If the repository is not connected to Github Actions, this will allow you to
+deploy the app to an Azure Static Web App. This will deploy the api function
+embedded with the SWA, not in a standalone Azure Function.
+
+The app will be deployed into a 'preview' deployment slot. Use `swa deploy:prod`
+to deploy to the 'production' slot.
+
 ### Build the CSS and Application
 
 `npm run build:app`
@@ -33,22 +58,3 @@ NODE_ENV.
 
 This will put the CSS into watch mode and start a Remix server on
 http://localhost:3000. The application does NOT run in an Azure emulator.
-
-### Build and run the App and CSS with Azure emulation
-
-`swa start`
-
-This will run the development build of the CSS in watch mode and the app in dev
-mode running through the Azure emulator. This is the closest to a hosted
-environment.
-
-### Build the App and CSS
-
-`swa build`
-
-Ths builds the app and CSS in production mode.
-
-### Deploy the app to Azure
-
-If the repository is not connected to Github CI Actions, this will allow you to
-deploy the app and function to Azure.
