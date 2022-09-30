@@ -13,7 +13,7 @@ on:
 env:
   AZURE_FUNCTIONAPP_NAME: remix-sandbox-server
   AZURE_FUNCTIONAPP_PACKAGE_PATH: 'api'
-  # AZURE_FUNCTIONAPP_SLOT_NAME: 'Production'
+  AZURE_FUNCTIONAPP_SLOT_NAME: ''
   NODE_VERSION: '16'
   
 jobs:
@@ -63,8 +63,7 @@ jobs:
         id: azurefunction
         with:
           app-name: ${{ env.AZURE_FUNCTIONAPP_NAME }}
-          # slot-name: ${{ env.AZURE_FUNCTIONAPP_SLOT_NAME }}
-          slot-name: 'Production'
+          slot-name: ${{ env.AZURE_FUNCTIONAPP_SLOT_NAME }}          
           package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
           publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }}
 
