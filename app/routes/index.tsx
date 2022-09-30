@@ -20,6 +20,7 @@ export default function Index() {
               className="bg-gray-100 shadow-md rounded px-8 pt-6 pb-8 mb-4"
               id="loginForm"
               method="post"
+              action="/ris/welcome"
             >
               <div className="grid grid-cols-1 gap-6">
                 <label className="block" htmlFor="username">
