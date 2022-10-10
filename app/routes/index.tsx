@@ -5,7 +5,14 @@ export default function Index() {
     <div className="antialised text-gray-900 px-6">
       <div className="max-w-xl mx-auto py-12 divide-y md-max-w-4xl">
         <div className="py-8">
-          <h1 className="text-4xl font-bold">CareRIS</h1>
+          <div className="flex items-center">
+            <img
+              className="object-contain h-12 w-12 mr-2"
+              src="./img/logo.png"
+              alt="Logo"
+            />
+            <h1 className="text-4xl font-bold">CareRIS</h1>
+          </div>
           <div className="mt-2 text-lg text-gray-600">
             Welcome to the next generation Radiology Information System
           </div>
