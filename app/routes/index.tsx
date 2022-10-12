@@ -67,6 +67,7 @@ export default function Index() {
             </div>
           </div>
         </div>
+        <span>v.0.1</span>
       </div>
     </div>
   )
